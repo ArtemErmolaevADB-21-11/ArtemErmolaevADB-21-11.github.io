@@ -5,6 +5,25 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="header">
+    <div class="full-name">
+      <span class="first-name">Ермолаев</span> 
+      <span class="last-name">Артем</span>
+    </div>
+    <div class="contact-info">
+      <span class="email">Email: </span>
+      <span class="email-val">gmail@gmail.com</span>
+      <span class="separator"></span>
+      <span class="phone">Phone: </span>
+      <span class="phone-val">123-456-7890</span>
+    </div>
+    
+    <div class="about">
+      <span class="position">Описание моих умений</span>
+      <span class="desc"> Я что-то умею.
+      </span>
+    </div>
+  </div>
     <h1>h1</h1>
   </body>
 </html>
@@ -19,6 +38,48 @@
   font-size: 14px;
   line-height: 26px;
   padding-bottom: 50px;
+}
+  header {
+  margin-bottom: 30px;
+  color: white;
+    
+  full-name {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  first-name {
+    font-weight: 700;
+  }
+  
+  last-name {
+    font-weight: 300;
+  }
+  
+  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  email ,
+  phone {
+    color: #9ACD32;
+    font-weight: 300;
+  } 
+  
+  separator {
+    height: 10px;
+    display: inline-block;
+    border-left: 4px solid #00FF00;
+    margin: 0px 10px;
+  }
+  
+  .position {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: underline;
+  }
 }
   h1 {
     color: blue;
