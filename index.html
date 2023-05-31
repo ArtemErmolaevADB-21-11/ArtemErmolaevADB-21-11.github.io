@@ -39,9 +39,20 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="picture">
+      <div class="picture-title">Картинка</div>
+      <img src="https://i.imgflip.com/3oidrb.jpg">
+    </div>
+    <div class="knopka">
+      <div class="knopka-title">Кнопка</div>
+      <div class="knopka-sama">
+        <button class="styled" type="button" onclick="javascript:alert('Кнопка работает!');">Кнопка</button>
+      </div>
     </div>
      
-    <h1>h1</h1>
+    <h1>Все представленное не несет смысловой нагрузки и является лишь демонстрацией полученных навыков</h1>
   </body>
 </html>
 
@@ -60,12 +71,12 @@
 }
   .header {
   margin-bottom: 30px;
+  margin-top: 100px;
     
   .full-name {
     font-size: 40px;
     text-transform: uppercase;
-    margin-bottom: 5px;
-    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .first-name {
@@ -147,11 +158,56 @@
     font-weight: bold;
   }
 }
-  
+  .picture {
+  margin-top: 30px;
+
+  .picture-title {
+    letter-spacing: 1px;
+    color: #9ACD32;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+}
+.knopka {
+  margin-top: 30px;
+
+
+  .knopka-title {
+    letter-spacing: 1px;
+    color: #9ACD32;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+  .knopka-sama {
+    block-size: 150px;
+    .styled {
+      border: 0;
+      line-height: 2.5;
+      padding: 0 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4B0082;
+      border-radius: 10px;
+      background-color: #9ACD32;
+    }
+    .styled:hover {
+      background-color: rgba(255, 0, 0, 1);
+    }
+    .styled:active {
+      background-color: rgba(0, 0, 255, 1);
+    }
+  }
+}
+
   h1 {
+    width: 550px;
+    font-size: 10px;
     color: blue;
-    background-color: yellow;
+    background-color: #FFDEAD;
     border: 1px solid black;
+    margin: 0 auto;
 }
   
 </style>
