@@ -51,6 +51,34 @@
         <button class="styled" type="button" onclick="javascript:alert('Кнопка работает!');">Кнопка</button>
       </div>
     </div>
+
+    <div class="data">
+      <div class="data__title">Сбор данных</div>
+      <button class="btn" onclick="myFunction()">Начать сбор данных</button>
+      <ul id="demo">
+
+      </ul>
+    </div>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      function myFunction() {
+        (async () => {
+          let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+          let el = document.getElementById('demo')
+          el.innerHTML = ""
+          let text = await response.text(); // прочитать тело ответа как текст
+          for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+            const newEl = document.createElement("li")
+            newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+            el.appendChild(newEl)
+            await sleep(100)
+          }
+        })()
+      }
+
+    </script>
      
     <h1>Все представленное не несет смысловой нагрузки и является лишь демонстрацией полученных навыков</h1>
   </body>
@@ -181,7 +209,6 @@
     text-decoration: underline;
   }
   .knopka-sama {
-    block-size: 150px;
     .styled {
       border: 0;
       line-height: 2.5;
@@ -199,6 +226,45 @@
       background-color: rgba(0, 0, 255, 1);
     }
   }
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  justify-content: start;
+  min-height: 370px;
+  color: #9ACD32;
+  
+  .data__title {
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+  .btn {
+    border-radius: 4px;
+    border: solid 2px #4CAF50;
+    color: #DC143C;
+    background-color: #9ACD32;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 14px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: red;
+    color: #4B0082;
+  }
+
 }
 
   h1 {
